@@ -167,22 +167,6 @@
       ]
     },
     {
-      "__guid": "688c301e-c9a7-441d-9c79-b28d351e057d",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-130.5766,-186.906,113.0913",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c3dac7c6-f280-4107-8669-f56ba07b8cc1",
-          "BodyGroups": 18446744073709551615,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "baba2c1e-6dab-414f-b20c-064b180def96",
       "Flags": 0,
       "Name": "player_ship",
@@ -213,7 +197,7 @@
           "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
           "Flags": 0,
           "Name": "Camera",
-          "Position": "-64,-0.00000004470348,16",
+          "Position": "-256,-0.00000004470348,64",
           "Rotation": "0.00000003737216,0.08715575,-0.000000003269641,0.9961947",
           "Enabled": true,
           "Components": [
@@ -283,10 +267,54 @@
           ]
         },
         {
+          "__guid": "e4ff41db-c083-4027-b905-ee58ca9ee8fe",
+          "Flags": 0,
+          "Name": "Trail (1)",
+          "Position": "-78.39763,-12.6152,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.TrailRenderer",
+              "__guid": "12b9ec91-836f-42c7-a45f-092f6ff83b54",
+              "BlendMode": "Normal",
+              "CastShadows": false,
+              "Color": {
+                "color": [
+                  {
+                    "t": 0.5,
+                    "c": "0,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "LifeTime": 2,
+              "MaxPoints": 64,
+              "Opaque": true,
+              "PointDistance": 8,
+              "Texturing": {
+                "WorldSpace": true,
+                "UnitsPerTexture": 10,
+                "Scale": 1
+              },
+              "Width": [
+                {
+                  "y": 1
+                },
+                {
+                  "x": 1,
+                  "in": 2.65,
+                  "out": -2.65
+                }
+              ],
+              "Wireframe": false
+            }
+          ]
+        },
+        {
           "__guid": "42def26e-1cf2-48d1-9ba1-76c2459ab3c7",
           "Flags": 0,
           "Name": "Trail",
-          "Position": "-9.908539,0,0",
+          "Position": "-78.39763,14.83014,0",
           "Enabled": true,
           "Components": [
             {
@@ -337,7 +365,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "34af791a-efdd-4326-9e8f-4ae374cb3c36",
               "BodyGroups": 18446744073709551615,
-              "Model": "models/editor/arrow.vmdl",
+              "Model": "test-files/starfighter_greybox.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }

@@ -6,23 +6,30 @@ public sealed class PlayerController : Component
 {
 	[Property] public GameObject Model { get; set; }
 	[Property] public GameObject cam;
+	[Property] public float drag;
+	[Property] public float slideDrag;
+	[Property] public float speed;
+	private Vector3 movement;
 
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
-
-		if ( IsProxy )
-			return;
+		movement = 0;
+		
 	}
 
 	protected override void OnUpdate()
 	{
-		Vector3 movement = 0;
+		float energyRetention = 1f - drag;
+
 		if ( Input.Down( "Forward" ) ) movement += Transform.World.Forward;
 		if ( Input.Down( "Backward" ) ) movement += Transform.World.Backward;
+		if ( Input.Down( "Jump") ) energyRetention = 1f - slideDrag;
+		
+		movement *= energyRetention;
 
 		var rot = GameObject.Transform.Rotation;
-		var pos = GameObject.Transform.Position + movement * Time.Delta * 100.0f;
+		var pos = GameObject.Transform.Position + movement * Time.Delta * speed;
 		
 		if ( Input.Down( "Left" ) )
 		{

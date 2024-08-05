@@ -186,55 +186,12 @@
       "__guid": "baba2c1e-6dab-414f-b20c-064b180def96",
       "Flags": 0,
       "Name": "player_ship",
-      "Position": "-190.8171,0,56.28237",
+      "Position": "-197.0055,0,56.28237",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 1,
       "OwnerTransfer": 0,
       "Components": [
-        {
-          "__type": "Sandbox.TrailRenderer",
-          "__guid": "2e2075da-4214-438f-8fee-d2cf06125143",
-          "BlendMode": "Normal",
-          "CastShadows": false,
-          "Color": {
-            "color": [
-              {
-                "t": 0.5,
-                "c": "0,1,1,1"
-              }
-            ],
-            "alpha": []
-          },
-          "LifeTime": 2,
-          "MaxPoints": 64,
-          "Opaque": true,
-          "PointDistance": 8,
-          "Texturing": {
-            "WorldSpace": true,
-            "UnitsPerTexture": 10,
-            "Scale": 1
-          },
-          "Width": [
-            {
-              "y": 1
-            },
-            {
-              "x": 1,
-              "in": 2.65,
-              "out": -2.65
-            }
-          ],
-          "Wireframe": false
-        },
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "e1c22c26-c478-4eee-aaa4-33b365ab4c94",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/editor/arrow.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
         {
           "__type": "PlayerController",
           "__guid": "47d5e352-44f6-4255-a848-0e9a3d160b0e",
@@ -242,6 +199,9 @@
             "_type": "gameobject",
             "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
           },
+          "drag": 0.1,
+          "slideDrag": 0.01,
+          "speed": 50,
           "Model": {
             "_type": "gameobject",
             "go": "baba2c1e-6dab-414f-b20c-064b180def96"
@@ -319,6 +279,67 @@
               "__type": "Sandbox.Sharpen",
               "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
               "Scale": 0.2
+            }
+          ]
+        },
+        {
+          "__guid": "42def26e-1cf2-48d1-9ba1-76c2459ab3c7",
+          "Flags": 0,
+          "Name": "Trail",
+          "Position": "-9.908539,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.TrailRenderer",
+              "__guid": "be693162-0d63-4241-bb97-1ceb2d621c85",
+              "BlendMode": "Normal",
+              "CastShadows": false,
+              "Color": {
+                "color": [
+                  {
+                    "t": 0.5,
+                    "c": "0,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "LifeTime": 2,
+              "MaxPoints": 64,
+              "Opaque": true,
+              "PointDistance": 8,
+              "Texturing": {
+                "WorldSpace": true,
+                "UnitsPerTexture": 10,
+                "Scale": 1
+              },
+              "Width": [
+                {
+                  "y": 1
+                },
+                {
+                  "x": 1,
+                  "in": 2.65,
+                  "out": -2.65
+                }
+              ],
+              "Wireframe": false
+            }
+          ]
+        },
+        {
+          "__guid": "bf71b5f5-7b2b-4bf3-8b29-dd2af02fa2ee",
+          "Flags": 0,
+          "Name": "Model",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "34af791a-efdd-4326-9e8f-4ae374cb3c36",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/editor/arrow.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             }
           ]
         }

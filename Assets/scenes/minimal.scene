@@ -171,29 +171,152 @@
       ]
     },
     {
+      "__guid": "20f4e490-37fc-428f-b83c-a05dca5eb571",
+      "Flags": 0,
+      "Name": "player_cam_origin",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PlayerController",
+          "__guid": "f41e97c5-df34-482b-84cd-73ec262b884b",
+          "aimDistance": 500,
+          "cam": {
+            "_type": "gameobject",
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+          },
+          "cameraRig": {
+            "_type": "gameobject",
+            "go": "20f4e490-37fc-428f-b83c-a05dca5eb571"
+          },
+          "camSmoothSpeed": 5,
+          "drag": 0,
+          "mouseAim": {
+            "_type": "gameobject",
+            "go": "ca1b3d67-e89b-41a4-8ef4-934f1ec44515"
+          },
+          "mouseSensitivity": 5,
+          "slideDrag": 0,
+          "speed": 0,
+          "model": {
+            "_type": "gameobject",
+            "go": "baba2c1e-6dab-414f-b20c-064b180def96"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+          "Flags": 0,
+          "Name": "Camera",
+          "Position": "-253.1565,-0.000001273331,80.12639",
+          "Rotation": "0.00000003737216,0.08715575,-0.000000003269641,0.9961947",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.CameraComponent",
+              "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 60,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "Sandbox.Bloom",
+              "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "1,1,1,1"
+                  }
+                ],
+                "alpha": []
+              },
+              "BloomCurve": [
+                {
+                  "y": 0.5
+                },
+                {
+                  "x": 1,
+                  "y": 1
+                }
+              ],
+              "Mode": "Additive",
+              "Strength": 0.5,
+              "Threshold": 0.5,
+              "ThresholdWidth": 0.5
+            },
+            {
+              "__type": "Sandbox.Tonemapping",
+              "__guid": "9d76f362-7227-40eb-a189-69353c780c46",
+              "__version": 1,
+              "ExposureBias": 2,
+              "ExposureCompensation": 0,
+              "ExposureMethod": "RGB",
+              "MaximumExposure": 2,
+              "MinimumExposure": 1,
+              "Mode": "Legacy",
+              "Rate": 1
+            },
+            {
+              "__type": "Sandbox.Sharpen",
+              "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
+              "Scale": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
       "__guid": "baba2c1e-6dab-414f-b20c-064b180def96",
       "Flags": 0,
       "Name": "player_ship",
-      "Position": "-197.0055,0,56.28237",
+      "Position": "-197.0055,185.8817,56.28237",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkOrphaned": 1,
       "OwnerTransfer": 0,
       "Components": [
         {
-          "__type": "PlayerController",
-          "__guid": "47d5e352-44f6-4255-a848-0e9a3d160b0e",
-          "cam": {
-            "_type": "gameobject",
-            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "326fe993-1dd7-461f-9002-374763c31f91",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PlayerCraft",
+          "__guid": "7e29fcb3-f1c8-4b44-a134-733c4430e6da",
+          "aggressiveTurnAngle": 10,
+          "controller": {
+            "_type": "component",
+            "component_id": "f41e97c5-df34-482b-84cd-73ec262b884b",
+            "go": "20f4e490-37fc-428f-b83c-a05dca5eb571",
+            "component_type": "PlayerController"
           },
-          "drag": 0.1,
-          "slideDrag": 0.01,
-          "speed": 50,
-          "Model": {
-            "_type": "gameobject",
-            "go": "baba2c1e-6dab-414f-b20c-064b180def96"
-          }
+          "forceMult": 1000,
+          "sensitivity": 5,
+          "thrust": 100,
+          "turnTorque": "90,25,45"
         }
       ],
       "Children": [
@@ -303,90 +426,15 @@
               ]
             }
           ]
-        },
-        {
-          "__guid": "20f4e490-37fc-428f-b83c-a05dca5eb571",
-          "Flags": 0,
-          "Name": "cam_origin",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Children": [
-            {
-              "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
-              "Flags": 0,
-              "Name": "Camera",
-              "Position": "-256,-0.00000004470348,64",
-              "Rotation": "0.00000003737216,0.08715575,-0.000000003269641,0.9961947",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.CameraComponent",
-                  "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                  "ClearFlags": "All",
-                  "FieldOfView": 60,
-                  "IsMainCamera": true,
-                  "Orthographic": false,
-                  "OrthographicHeight": 1204,
-                  "Priority": 1,
-                  "RenderExcludeTags": "",
-                  "RenderTags": "",
-                  "TargetEye": "None",
-                  "Viewport": "0,0,1,1",
-                  "ZFar": 10000,
-                  "ZNear": 10
-                },
-                {
-                  "__type": "Sandbox.Bloom",
-                  "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
-                  "BloomColor": {
-                    "color": [
-                      {
-                        "c": "1,1,1,1"
-                      },
-                      {
-                        "t": 1,
-                        "c": "1,1,1,1"
-                      }
-                    ],
-                    "alpha": []
-                  },
-                  "BloomCurve": [
-                    {
-                      "y": 0.5
-                    },
-                    {
-                      "x": 1,
-                      "y": 1
-                    }
-                  ],
-                  "Mode": "Additive",
-                  "Strength": 0.5,
-                  "Threshold": 0.5,
-                  "ThresholdWidth": 0.5
-                },
-                {
-                  "__type": "Sandbox.Tonemapping",
-                  "__guid": "9d76f362-7227-40eb-a189-69353c780c46",
-                  "__version": 1,
-                  "ExposureBias": 2,
-                  "ExposureCompensation": 0,
-                  "ExposureMethod": "RGB",
-                  "MaximumExposure": 2,
-                  "MinimumExposure": 1,
-                  "Mode": "Legacy",
-                  "Rate": 1
-                },
-                {
-                  "__type": "Sandbox.Sharpen",
-                  "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
-                  "Scale": 0.2
-                }
-              ]
-            }
-          ]
         }
       ]
+    },
+    {
+      "__guid": "ca1b3d67-e89b-41a4-8ef4-934f1ec44515",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-239.5255,-37.30165,76.41238",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

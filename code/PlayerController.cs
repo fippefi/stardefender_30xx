@@ -5,7 +5,7 @@ using System.Runtime;
 public sealed class PlayerController : Component
 {
 	[Property] public GameObject Model { get; set; }
-	[Property] public GameObject cam;
+	[Property] public GameObject Cam { get; set; }
 	[Property] public float drag;
 	[Property] public float slideDrag;
 	[Property] public float speed;

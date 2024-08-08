@@ -119,8 +119,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -159,8 +161,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -194,167 +198,6 @@
       ],
       "Children": [
         {
-          "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
-          "Flags": 0,
-          "Name": "Camera",
-          "Position": "-256,-0.00000004470348,64",
-          "Rotation": "0.00000003737216,0.08715575,-0.000000003269641,0.9961947",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.CameraComponent",
-              "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 60,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 10
-            },
-            {
-              "__type": "Sandbox.Bloom",
-              "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
-              "BloomColor": {
-                "color": [
-                  {
-                    "c": "1,1,1,1"
-                  },
-                  {
-                    "t": 1,
-                    "c": "1,1,1,1"
-                  }
-                ],
-                "alpha": []
-              },
-              "BloomCurve": [
-                {
-                  "y": 0.5
-                },
-                {
-                  "x": 1,
-                  "y": 1
-                }
-              ],
-              "Mode": "Additive",
-              "Strength": 0.5,
-              "Threshold": 0.5,
-              "ThresholdWidth": 0.5
-            },
-            {
-              "__type": "Sandbox.Tonemapping",
-              "__guid": "9d76f362-7227-40eb-a189-69353c780c46",
-              "__version": 1,
-              "ExposureBias": 2,
-              "ExposureCompensation": 0,
-              "ExposureMethod": "RGB",
-              "MaximumExposure": 2,
-              "MinimumExposure": 1,
-              "Mode": "Legacy",
-              "Rate": 1
-            },
-            {
-              "__type": "Sandbox.Sharpen",
-              "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
-              "Scale": 0.2
-            }
-          ]
-        },
-        {
-          "__guid": "e4ff41db-c083-4027-b905-ee58ca9ee8fe",
-          "Flags": 0,
-          "Name": "Trail (1)",
-          "Position": "-78.39763,-12.6152,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TrailRenderer",
-              "__guid": "12b9ec91-836f-42c7-a45f-092f6ff83b54",
-              "BlendMode": "Normal",
-              "CastShadows": false,
-              "Color": {
-                "color": [
-                  {
-                    "t": 0.5,
-                    "c": "0,1,1,1"
-                  }
-                ],
-                "alpha": []
-              },
-              "LifeTime": 2,
-              "MaxPoints": 64,
-              "Opaque": true,
-              "PointDistance": 8,
-              "Texturing": {
-                "WorldSpace": true,
-                "UnitsPerTexture": 10,
-                "Scale": 1
-              },
-              "Width": [
-                {
-                  "y": 1
-                },
-                {
-                  "x": 1,
-                  "in": 2.65,
-                  "out": -2.65
-                }
-              ],
-              "Wireframe": false
-            }
-          ]
-        },
-        {
-          "__guid": "42def26e-1cf2-48d1-9ba1-76c2459ab3c7",
-          "Flags": 0,
-          "Name": "Trail",
-          "Position": "-78.39763,14.83014,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.TrailRenderer",
-              "__guid": "be693162-0d63-4241-bb97-1ceb2d621c85",
-              "BlendMode": "Normal",
-              "CastShadows": false,
-              "Color": {
-                "color": [
-                  {
-                    "t": 0.5,
-                    "c": "0,1,1,1"
-                  }
-                ],
-                "alpha": []
-              },
-              "LifeTime": 2,
-              "MaxPoints": 64,
-              "Opaque": true,
-              "PointDistance": 8,
-              "Texturing": {
-                "WorldSpace": true,
-                "UnitsPerTexture": 10,
-                "Scale": 1
-              },
-              "Width": [
-                {
-                  "y": 1
-                },
-                {
-                  "x": 1,
-                  "in": 2.65,
-                  "out": -2.65
-                }
-              ],
-              "Wireframe": false
-            }
-          ]
-        },
-        {
           "__guid": "bf71b5f5-7b2b-4bf3-8b29-dd2af02fa2ee",
           "Flags": 0,
           "Name": "Model",
@@ -368,6 +211,178 @@
               "Model": "test-files/starfighter_greybox.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "42def26e-1cf2-48d1-9ba1-76c2459ab3c7",
+              "Flags": 0,
+              "Name": "Trail",
+              "Position": "-78.39763,14.83014,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.TrailRenderer",
+                  "__guid": "be693162-0d63-4241-bb97-1ceb2d621c85",
+                  "BlendMode": "Normal",
+                  "CastShadows": false,
+                  "Color": {
+                    "color": [
+                      {
+                        "t": 0.5,
+                        "c": "0,1,1,1"
+                      }
+                    ],
+                    "alpha": []
+                  },
+                  "LifeTime": 2,
+                  "MaxPoints": 64,
+                  "Opaque": true,
+                  "PointDistance": 8,
+                  "Texturing": {
+                    "WorldSpace": true,
+                    "UnitsPerTexture": 10,
+                    "Scale": 1
+                  },
+                  "Width": [
+                    {
+                      "y": 1
+                    },
+                    {
+                      "x": 1,
+                      "in": 2.65,
+                      "out": -2.65
+                    }
+                  ],
+                  "Wireframe": false
+                }
+              ]
+            },
+            {
+              "__guid": "e4ff41db-c083-4027-b905-ee58ca9ee8fe",
+              "Flags": 0,
+              "Name": "Trail (1)",
+              "Position": "-78.39763,-12.6152,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.TrailRenderer",
+                  "__guid": "12b9ec91-836f-42c7-a45f-092f6ff83b54",
+                  "BlendMode": "Normal",
+                  "CastShadows": false,
+                  "Color": {
+                    "color": [
+                      {
+                        "t": 0.5,
+                        "c": "0,1,1,1"
+                      }
+                    ],
+                    "alpha": []
+                  },
+                  "LifeTime": 2,
+                  "MaxPoints": 64,
+                  "Opaque": true,
+                  "PointDistance": 8,
+                  "Texturing": {
+                    "WorldSpace": true,
+                    "UnitsPerTexture": 10,
+                    "Scale": 1
+                  },
+                  "Width": [
+                    {
+                      "y": 1
+                    },
+                    {
+                      "x": 1,
+                      "in": 2.65,
+                      "out": -2.65
+                    }
+                  ],
+                  "Wireframe": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "20f4e490-37fc-428f-b83c-a05dca5eb571",
+          "Flags": 0,
+          "Name": "cam_origin",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Children": [
+            {
+              "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+              "Flags": 0,
+              "Name": "Camera",
+              "Position": "-256,-0.00000004470348,64",
+              "Rotation": "0.00000003737216,0.08715575,-0.000000003269641,0.9961947",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 60,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                },
+                {
+                  "__type": "Sandbox.Bloom",
+                  "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
+                  "BloomColor": {
+                    "color": [
+                      {
+                        "c": "1,1,1,1"
+                      },
+                      {
+                        "t": 1,
+                        "c": "1,1,1,1"
+                      }
+                    ],
+                    "alpha": []
+                  },
+                  "BloomCurve": [
+                    {
+                      "y": 0.5
+                    },
+                    {
+                      "x": 1,
+                      "y": 1
+                    }
+                  ],
+                  "Mode": "Additive",
+                  "Strength": 0.5,
+                  "Threshold": 0.5,
+                  "ThresholdWidth": 0.5
+                },
+                {
+                  "__type": "Sandbox.Tonemapping",
+                  "__guid": "9d76f362-7227-40eb-a189-69353c780c46",
+                  "__version": 1,
+                  "ExposureBias": 2,
+                  "ExposureCompensation": 0,
+                  "ExposureMethod": "RGB",
+                  "MaximumExposure": 2,
+                  "MinimumExposure": 1,
+                  "Mode": "Legacy",
+                  "Rate": 1
+                },
+                {
+                  "__type": "Sandbox.Sharpen",
+                  "__guid": "0bffee5e-19f2-41c4-88f9-faefbcce6bf4",
+                  "Scale": 0.2
+                }
+              ]
             }
           ]
         }

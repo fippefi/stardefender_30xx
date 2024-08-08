@@ -23,6 +23,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
+						name = "starfighter_greybox"
 						filename = "test-files/starfighter_greybox.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]

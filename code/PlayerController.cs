@@ -7,16 +7,12 @@ public sealed class PlayerController : Component
 	[Property] private GameObject cam;
 	[Property] private GameObject cameraRig;
 	[Property] private GameObject mouseAim;
-	[Property] public float drag;
-	[Property] public float slideDrag;
-	[Property] public float speed;
 	[Property] private float camSmoothSpeed = 5f;
 	[Property] private float mouseSensitivity = 5f;
 	[Property] private float aimDistance = 500f;
 	private Vector3 frozenDirection = Vector3.Forward;
 	private bool isMouseAimFrozen = false;
 	private bool useFixed = true; //Fixedupdate y/n
-	private Vector3 movement;
 
 	public Vector3 BoresightPos
 	{
@@ -53,11 +49,6 @@ public sealed class PlayerController : Component
 			Log.Error("MouseFlightController - No camera rig transform assigned!");
 		if (cam == null)
 			Log.Error("MouseFlightController - No camera transform assigned!");
-
-		// To work correctly, the entire rig must not be parented to anything.
-		// When parented to something (such as an aircraft) it will inherit those
-		// rotations causing unintended rotations as it gets dragged around.
-		Transform.Parent.Clear();
 	}
 
 	protected override void OnUpdate()
@@ -90,21 +81,7 @@ public sealed class PlayerController : Component
                 isMouseAimFrozen = false;
 		}
 
-		// Mouse input.
-		float mouseX = Input.MouseDelta.x * mouseSensitivity;
-		float mouseY = -Input.MouseDelta.y * mouseSensitivity;
-
-		// Rotate the aim target that the plane is meant to fly towards.
-		// Use the camera's axes in world space so that mouse motion is intuitive.
-		// mouseAim.Rotate(cam.right, mouseY, Space.World);
-		// mouseAim.Rotate(cam.up, mouseX, Space.World);
-
-
-
-		// The up vector of the camera normally is aligned to the horizon. However, when
-		// looking straight up/down this can feel a bit weird. At those extremes, the camera
-		// stops aligning to the horizon and instead aligns to itself.
-		Vector3 upVec = (MathF.Abs(mouseAim.Transform.Rotation.Forward.y) > 0.9f) ? cameraRig.Transform.Rotation.Up : Vector3.Up;
+		mouseAim.Transform.Rotation = mouseAim.Transform.Rotation * Input.AnalogLook;
 
 		// Smoothly rotate the camera to face the mouse aim.
 		cameraRig.Transform.Rotation = Damp(cameraRig.Transform.Rotation,

@@ -24,12 +24,12 @@ public sealed class PlayerCraft : Component
         private bool rollOverride = false;
         private bool pitchOverride = false;
 
-        private void Awake()
+        protected override void OnEnabled()
         {
             rigid = this.Components.Get<Rigidbody>();
         }
 
-        private void Update()
+        protected override void OnUpdate()
         {
             // When the player commands their own stick input, it should override what the
             // autopilot is trying to do.
@@ -108,7 +108,7 @@ public sealed class PlayerCraft : Component
 			roll = aggressiveRoll;
         }
 
-        private void FixedUpdate()
+        protected override void OnFixedUpdate()
         {
             // Ultra simple flight where the plane just gets pushed forward and manipulated
             // with torques to turn.
